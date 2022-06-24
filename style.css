@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+    background-color: #222;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#grid {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    background-color: #333;
+    gap: 0;
+}
+
+.square {
+    background-color: #333;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 100px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 300px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    background-color: lightgrey;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+}
