@@ -1,4 +1,6 @@
 const grid = document.querySelector("#grid");
+let mode = 'color';
+let color = 'black';
 
 function createGrid(side1, side2) {
 
@@ -10,7 +12,7 @@ function createGrid(side1, side2) {
         square.className = 'square';
     
         square.addEventListener('mouseover', (e) => {
-            square.style.backgroundColor = 'black';
+            handleSquareMouseover(square);
         });
     
         grid.appendChild(square);
@@ -38,13 +40,38 @@ function changeSize (text) {
     }
 }
 
+
+function handleSquareMouseover(square) {
+    let bgColor = square.style.backgroundColor;
+    let newBgColor = `rgb(${Math.random()*255+1},${Math.random()*255+1},${Math.random()*255+1})`;
+
+    if (mode === 'rainbow' && !!bgColor) {
+        newBgColor = 'rgb(';
+        colorArr = bgColor.slice(4, -1).split(',');
+        for (i = 0; i <colorArr.length; i++) {
+            if (i !== 0) {
+                newBgColor+= ','
+            }
+            console.log(colorArr[i])
+            colorArr[i] = parseInt(colorArr[i]);
+            if (colorArr[i] >= 10) {
+                colorArr[i] -= 25;
+            } else {
+                colorArr[i] = 0;
+            }
+            newBgColor+= colorArr[i];
+           console.log(colorArr[i])
+        };
+        newBgColor += ')';
+    }
+
+    if (mode === 'rainbow') square.style.backgroundColor = newBgColor;
+    else square.style.backgroundColor = color;
+}
+
 document.querySelector('.size').addEventListener('click', (e) => {
-    console.log('test');
     changeSize('New grid size?');
-
-
 });
-
 
 
 

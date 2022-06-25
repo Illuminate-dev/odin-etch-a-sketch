@@ -15,6 +15,7 @@
     gap: 0;
 }
 
+
 .square {
     background-color: #333;
 }
@@ -37,4 +38,11 @@ button {
     font-size: 20px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 0 darkgrey;
+}
+
+button:active {
+    box-shadow: none;
+    transform: translateY(5px);
 }
