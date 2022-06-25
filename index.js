@@ -1,5 +1,7 @@
 const grid = document.querySelector("#grid");
-let mode = 'color';
+const colorselector = document.querySelector("input")
+const modeselector = document.querySelector("#mode");
+let mode = modeselector.value;
 let color = 'black';
 
 function createGrid(side1, side2) {
@@ -73,6 +75,20 @@ document.querySelector('.size').addEventListener('click', (e) => {
     changeSize('New grid size?');
 });
 
+document.querySelector('.reset').addEventListener('click', (e) => {
+    destroyGrid();
+    createGrid(16, 16)
+})
+
+
+colorselector.addEventListener('input', (e) => {
+    color = e.target.value;
+})
+
+
+modeselector.addEventListener('change', (e) => {
+    mode = e.target.value;
+})
 
 
 destroyGrid();

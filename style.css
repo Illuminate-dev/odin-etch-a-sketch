@@ -24,8 +24,8 @@
 .main {
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    padding: 100px;
+    gap: 70px;
+    padding: 20px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -45,4 +45,34 @@ button {
 button:active {
     box-shadow: none;
     transform: translateY(5px);
+}
+
+div.colorselector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    color: white;
+    font-size: 20px;
+}
+
+input {
+    background-color: lightslategrey;
+    border-radius: 3px;
+}
+
+select, option {
+    background-color: white;
+    color: black;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
 }

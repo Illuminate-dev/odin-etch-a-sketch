@@ -10,7 +10,20 @@
   </head>
   <body>
     <div class="main">
-      <button class="size">Change Grid Size</button>
+      <div class="buttons">
+        <button class="size">Change Grid Size</button>
+        <button class="reset">Reset Grid</button>
+      </div>
+      <div class="colorselector">
+        <input type="color" name="color" id="color" class="colorslector" />
+        <label for="color">Choose the Color</label>
+      </div>
+
+      <select name="mode" id="mode">
+        <option value="color" selected>Color</option>
+        <option value="rainbow">Rainbow</option>
+      </select>
+
       <div id="grid"></div>
     </div>
   </body>
